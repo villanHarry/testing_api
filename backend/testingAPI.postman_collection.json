@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "4ae49ab3-1dc3-4486-9a49-d646f654b0ab",
+		"name": "testingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32616607"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"johnDoe@email.com\",\r\n    \"password\": \"Abcd@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{testing_url}}signup",
+					"host": [
+						"{{testing_url}}signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"johnDoe@email.com\",\r\n    \"password\": \"Abcd@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{testing_url}}login",
+					"host": [
+						"{{testing_url}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzAwYmIwZmFjNzY1NDViOGQwMWQ4OCIsImlhdCI6MTcwNzA4ODQxNywiZXhwIjoxNzA5NjgwNDE3fQ.Dy-U05rASLfNW445Hpvx9Z5g9JAuECrR9FBsT1irknI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{testing_url}}profile",
+					"host": [
+						"{{testing_url}}profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "testing_url",
+			"value": "localhost:3000/user/api/",
+			"type": "string"
+		}
+	]
+}
